@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-// import logo from './logo.svg';
+import logo from './logo.svg';
 import './App.css';
 import Card from './UI/Card';
 class App extends Component {
@@ -7,19 +7,16 @@ class App extends Component {
     person: [
       { name: 'Max', age: 28}
     ],
-    counter: 0
+    counter: 1
   }
 
-   counterHandler = (counter) =>{
-       this.setState({counter: counter + 1})
-      //  localStorage.setItem('counter',this.state.counter);
+   counterHandler = () =>{
+       this.setState({counter: 1+1})
      }
-
   render(){
     return (
       <div className="App">
-        {/* <button onClick={this.counterHandler.bind(this, this.state.counter + 1)}>Click me</button> */}
-        <button onClick={() => this.counterHandler(this.state.counter + 1)}>Click me</button>
+        <button onClick={this.counterHandler}>Click me</button>
         <Card name={this.state.person[0].name} age={this.state.person[0].age}   >
           <h1>
             {this.state.counter}
